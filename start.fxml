@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?scenebuilder-background-color 0xfffb99ff?>
 
 <AnchorPane prefHeight="750.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Start">
@@ -31,11 +32,7 @@
             <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="245.0" layoutY="163.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
             <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="245.0" layoutY="325.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
             <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="245.0" layoutY="487.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
-            <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" layoutX="407.0" layoutY="0.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true">
-              <fill>
-                <Color blue="0.800" green="0.992" red="1.000" fx:id="x3" />
-              </fill>
-            </Circle>
+            <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="407.0" layoutY="0.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
             <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="407.0" layoutY="163.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
             <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="407.0" layoutY="325.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
             <Circle blendMode="SRC_ATOP" centerX="0.0" centerY="0.0" disable="false" fill="$x1" layoutX="407.0" layoutY="487.0" mouseTransparent="true" opacity="1.0" radius="70.0" smooth="true" stroke="$x2" strokeLineCap="SQUARE" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="10.0" visible="true" />
@@ -48,7 +45,30 @@
             <Insets left="25.0" right="25.0" />
           </GridPane.margin>
         </Group>
-        <Button blendMode="SRC_ATOP" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Click Me!" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <Group id="Group" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="0.0" layoutY="-27.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER">
+              <font>
+                <Font name="Courier New Bold" size="12.0" fx:id="x3" />
+              </font>
+            </Label>
+            <Label alignment="CENTER" font="$x3" layoutX="163.0" layoutY="-27.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="0.0" layoutY="136.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="0.0" layoutY="299.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="0.0" layoutY="461.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="163.0" layoutY="136.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="163.0" layoutY="299.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="163.0" layoutY="461.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="326.0" layoutY="-27.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="326.0" layoutY="136.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="326.0" layoutY="299.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="326.0" layoutY="461.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="488.0" layoutY="-27.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="488.0" layoutY="136.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="488.0" layoutY="299.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+            <Label alignment="CENTER" font="$x3" layoutX="488.0" layoutY="461.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER" />
+          </children>
+        </Group>
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -65,10 +85,10 @@
     </GridPane>
     <GridPane gridLinesVisible="false" prefHeight="50.0" prefWidth="650.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
       <children>
-        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x3" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x3" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x3" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x3" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x1" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x1" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x1" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <Rectangle arcHeight="10.0" arcWidth="10.0" blendMode="SRC_ATOP" fill="$x1" height="50.0" stroke="$x2" strokeType="INSIDE" strokeWidth="2.5" width="140.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

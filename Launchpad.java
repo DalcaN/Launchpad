@@ -2,7 +2,7 @@ import javafx.stage.Stage;
 
 public class Launchpad {
     private Stage primaryStage;
-    private Button[] currentPlayableButtons;
+    private Button[][] currentPlayableButtons;
     private Bank[] banks;
 
     public Launchpad(Stage primaryStage) {
@@ -32,8 +32,8 @@ public class Launchpad {
         System.out.println(this);
     }
 
-    public void pressButton(int index) {
-        currentPlayableButtons[index].press();
+    public void pressButton(int row, int col) {
+        currentPlayableButtons[row][col].press();
     }
 
     public Bank[] getBanks() {
@@ -44,8 +44,10 @@ public class Launchpad {
     public String toString() {
         String output = "\nCurrent Playable Buttons are:\n";
 
-        for (int i = 0; i < currentPlayableButtons.length; i++) {
-            output += currentPlayableButtons[i].toString() + "\n";
+        for (int row = 0; row < currentPlayableButtons.length; row++) {
+            for(int col = 0; col < currentPlayableButtons[row].length; col++) {
+                output += currentPlayableButtons[row][col].toString() + "\n";
+            }
         }
 
         output += "\n";

@@ -1,29 +1,29 @@
 import javafx.stage.Stage;
 
 public class Bank {
-    private Button[] buttons;
+    private Button[][] buttons;
     private Stage primaryStage;
 
     public Bank(Stage primaryStage) {
-        final int NUMBER_OF_BUTTONS = 2;
-
         this.primaryStage = primaryStage;
-        buttons = new Button[NUMBER_OF_BUTTONS];
+        buttons = new Button[4][4];
     }
 
-    public Button[] getButtons() {
+    public Button[][] getButtons() {
         return buttons;
     }
 
-    public void loadButton(int index) {
-        buttons[index] = new Button(primaryStage);
-        buttons[index].loadSample();
+    public void loadButton(int row, int col) {
+        buttons[row][col] = new Button(primaryStage);
+        buttons[row][col].loadSample();
     }
 
     public void loadButtons() {
-        for(int i = 0; i < buttons.length; i++) {
-            buttons[i] = new Button(primaryStage);
-            buttons[i].loadSample();
+        for(int row = 0; row < buttons.length; row++) {
+            for(int col = 0; col < buttons[row].length; col++) {
+                buttons[row][col] = new Button(primaryStage);
+                buttons[row][col].loadSample();
+            }
         }
     }
 

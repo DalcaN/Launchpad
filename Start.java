@@ -1,7 +1,12 @@
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Start extends Application {
+
+    private Launchpad launchpad;
 
     public static void main(String[] args) {
         launch(args);
@@ -9,22 +14,22 @@ public class Start extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
 
-        Launchpad launchpad = new Launchpad(primaryStage);
+        Scene scene = new Scene(root);
+
+        launchpad = new Launchpad(primaryStage);
         launchpad.loadBanks();
-        launchpad.selectBank(0);
-        launchpad.pressButton(0);   //play 1st
-        launchpad.selectBank(1);
-        launchpad.pressButton(1);    //play 4th
-        launchpad.selectBank(1);
-        launchpad.pressButton(0);    //play 3rd
-        launchpad.getBanks()[0].loadButton(0);
-        launchpad.selectBank(0);
-        launchpad.pressButton(1);    //play 2nd
-        launchpad.selectBank(0);
-        launchpad.pressButton(0);   //play changed 1st
 
-        System.exit(0);
+        StartController controller = new StartController();
+
+        primaryStage.setTitle("Launchpad");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public Launchpad getLaunchpad() {
+        return launchpad;
     }
 
 }
