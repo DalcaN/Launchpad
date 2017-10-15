@@ -1,9 +1,5 @@
 import javafx.application.Application;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class Start extends Application {
 
