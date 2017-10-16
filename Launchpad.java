@@ -7,9 +7,9 @@ public class Launchpad {
 
     public Launchpad(Stage primaryStage) {
         final int NUMBER_OF_BANKS = 2;
-
         this.primaryStage = primaryStage;
         banks = new Bank[NUMBER_OF_BANKS];
+        selectBank(0);
     }
 
     public void loadBanks() {
@@ -36,8 +36,8 @@ public class Launchpad {
         currentPlayableButtons[row][col].press();
     }
 
-    public Bank[] getBanks() {
-        return banks;
+    public Button[][] getCurrentPlayableButtons() {
+        return currentPlayableButtons;
     }
 
     @Override

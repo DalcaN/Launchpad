@@ -20,11 +20,9 @@ public class Sample {
 
         String source = file.toURI().toString();
         sample = new AudioClip(source);
-
-        //START = System.currentTimeMillis();
     }
 
-    public long getDurationInSeconds() throws UnsupportedAudioFileException, IOException {
+    private long getDurationInSeconds() throws UnsupportedAudioFileException, IOException {
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
         AudioFormat format = audioInputStream.getFormat();
         long audioFileLength = file.length();
@@ -38,7 +36,7 @@ public class Sample {
         return file;
     }
 
-    public File loadFile() {
+    private File loadFile() {
         FileChooser fileChooser = new FileChooser();
 
         fileChooser.getExtensionFilters().addAll(
@@ -57,9 +55,6 @@ public class Sample {
         } catch(Exception e) {
             e.printStackTrace();
         }
-
-        //System.out.println(this.toString()); <-- previous code
-
     }
 
     public void stop() {
