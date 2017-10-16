@@ -1,33 +1,38 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import sun.applet.Main;
 
-import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class Start extends Application {
     protected Launchpad launchpad;
-
-    public static void main(String[] args) {
-        launch(args);
-    }
+    private BorderPane mainLayout;
+    private Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Launchpad");
+        showMainView();
 
-        Scene scene = new Scene(root);
+        //launchpad = new Launchpad(primaryStage);
+        //launchpad.loadBanks();
+    }
 
-        launchpad = new Launchpad(primaryStage);
-        launchpad.loadBanks();
-
-        StartController controller = new StartController();
-
-        primaryStage.setTitle("Launchpad");
+    public void showMainView() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("/start.fxml"));
+        mainLayout = loader.load();
+        Scene scene = new Scene(mainLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
 
+    public static void main(String[] args) {
+        launch(args);
     }
 
 }
