@@ -10,16 +10,13 @@ import java.io.IOException;
 public class Start extends Application {
     protected Launchpad launchpad;
     private BorderPane mainLayout;
-    private Stage primaryStage;
+    protected Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Launchpad");
         showMainView();
-
-        //launchpad = new Launchpad(primaryStage);
-        //launchpad.loadBanks();
     }
 
     public void showMainView() throws IOException {

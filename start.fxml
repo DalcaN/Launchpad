@@ -8,9 +8,9 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.input.MouseEvent ?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartController">
    <center>
       <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -27,49 +27,49 @@
             <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Circle fill="WHITE" radius="72.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" stroke="BLACK" strokeType="INSIDE" width="142.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a00" mnemonicParsing="false" onMouseClicked="#keyPressedF1" prefHeight="30.0" prefWidth="140.0" text="Bank 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" stroke="BLACK" strokeType="INSIDE" width="142.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            </Button>
+            <Button fx:id="a01" mnemonicParsing="false" onMouseClicked="#keyPressedF2" prefHeight="30.0" prefWidth="140.0" text="Bank 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" stroke="BLACK" strokeType="INSIDE" width="142.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            </Button>
+            <Button fx:id="a02" mnemonicParsing="false" onMouseClicked="#keyPressedF3" prefHeight="30.0" prefWidth="140.0" text="Bank 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
-            </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" stroke="BLACK" strokeType="INSIDE" width="142.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            </Button>
+            <Button fx:id="a03" mnemonicParsing="false" onMouseClicked="#keyPressedF4" prefHeight="30.0" prefWidth="140.0" text="Bank 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
-            </Rectangle>
+            </Button>
+            <Button fx:id="a10" mnemonicParsing="false" onMouseClicked="#keyPressed1" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a11" mnemonicParsing="false" onMouseClicked="#keyPressed2" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a12" mnemonicParsing="false" onMouseClicked="#keyPressed3" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a13" mnemonicParsing="false" onMouseClicked="#keyPressed4" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a20" mnemonicParsing="false" onMouseClicked="#keyPressedQ" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a21" mnemonicParsing="false" onMouseClicked="#keyPressedW" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a22" mnemonicParsing="false" onMouseClicked="#keyPressedE" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a23" mnemonicParsing="false" onMouseClicked="#keyPressedR" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a30" mnemonicParsing="false" onMouseClicked="#keyPressedA" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a31" mnemonicParsing="false" onMouseClicked="#keyPressedS" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a32" mnemonicParsing="false" onMouseClicked="#keyPressedD" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a33" mnemonicParsing="false" onMouseClicked="#keyPressedF" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a40" mnemonicParsing="false" onMouseClicked="#keyPressedZ" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a41" mnemonicParsing="false" onMouseClicked="#keyPressedX" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a42" mnemonicParsing="false" onMouseClicked="#keyPressedC" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a43" mnemonicParsing="false" onMouseClicked="#keyPressedV" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </center>
    <top>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <Button alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" text="Load Soundpack" textAlignment="CENTER" translateX="275.0">
+          <Button fx:id="ls" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#onMouseClicked" prefWidth="150.0" text="Load Soundpack" textAlignment="CENTER" translateX="275.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

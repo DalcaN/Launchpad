@@ -6,7 +6,7 @@ public class Launchpad {
     private Bank[] banks;
 
     public Launchpad(Stage primaryStage) {
-        final int NUMBER_OF_BANKS = 1;
+        final int NUMBER_OF_BANKS = 2;
         this.primaryStage = primaryStage;
         banks = new Bank[NUMBER_OF_BANKS];
     }
@@ -31,10 +31,6 @@ public class Launchpad {
     public void selectBank(int index) {
         currentPlayableButtons = banks[index].getButtons();
         System.out.println(this);
-    }
-
-    public void pressButton(int row, int col) {
-        currentPlayableButtons[row][col].press();
     }
 
     public Button[][] getCurrentPlayableButtons() {

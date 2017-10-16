@@ -47,17 +47,5 @@ public class Sample {
 
     public void play() {
         sample.play();
-
-        try {
-            for(long i = 0; i <= getDurationInSeconds(); i++) {
-                Thread.sleep(1000);
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void stop() {
-        sample.stop();
     }
 }

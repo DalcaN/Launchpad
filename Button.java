@@ -14,17 +14,14 @@ public class Button {
     }
 
     public void press() {
-        System.out.println("Playing: " + this);
         sample.play();
-        System.out.println("Ending: " + this);
-        sample.stop();
     }
 
     @Override
     public String toString() {
         String output = sample.getSource().toURI().toString();
-        output = output.substring(6).replaceAll("%20", " ");
-
+        int index = output.lastIndexOf('/');
+        output = output.substring(index + 1).replaceAll("%20", " ");
         return output;
     }
 }
