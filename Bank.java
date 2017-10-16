@@ -6,7 +6,7 @@ public class Bank {
 
     public Bank(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        buttons = new Button[4][4];
+        buttons = new Button[2][2];
     }
 
     public Button[][] getButtons() {

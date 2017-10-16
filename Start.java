@@ -1,8 +1,11 @@
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.awt.event.ActionEvent;
 
 public class Start extends Application {
 
@@ -28,8 +31,21 @@ public class Start extends Application {
         primaryStage.show();
     }
 
-    public Launchpad getLaunchpad() {
-        return launchpad;
+    class StartController {
+        @FXML
+        public String getSongName (int row, int col) {
+            return launchpad.getCurrentPlayableButtons()[row][col].toString();
+        }
+
+        @FXML
+        public void playButton (ActionEvent event, int row, int col) {
+            launchpad.pressButton(row, col);
+        }
+
+        @FXML
+        public void selectBank(int bankIndex) {
+            launchpad.selectBank(bankIndex);
+        }
     }
 
 }
