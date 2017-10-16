@@ -11,7 +11,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-background-color 0xfffb99ff?>
 
-<AnchorPane prefHeight="750.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Start">
+<AnchorPane prefHeight="750.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="StartController">
   <children>
     <GridPane gridLinesVisible="false" prefHeight="650.0" prefWidth="650.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
       <children>
@@ -47,7 +47,7 @@
         </Group>
         <Group id="Group" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
           <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="0.0" layoutY="-27.0" prefHeight="52.9609375" prefWidth="78.0" text="BUTTON!" textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="0.0" layoutY="-27.0" prefHeight="52.9609375" prefWidth="78.0" text="Button!" textAlignment="CENTER">
               <font>
                 <Font name="Courier New Bold" size="12.0" fx:id="x3" />
               </font>
