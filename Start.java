@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class Start extends Application {
     protected Launchpad launchpad;
-    private BorderPane mainLayout;
     protected Stage primaryStage;
 
     @Override
@@ -22,7 +21,7 @@ public class Start extends Application {
     public void showMainView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("/start.fxml"));
-        mainLayout = loader.load();
+        BorderPane mainLayout = loader.load();
         Scene scene = new Scene(mainLayout);
         primaryStage.setScene(scene);
         primaryStage.show();

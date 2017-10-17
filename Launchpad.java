@@ -6,9 +6,8 @@ public class Launchpad {
     private Bank[] banks;
 
     public Launchpad(Stage primaryStage) {
-        final int NUMBER_OF_BANKS = 2;
         this.primaryStage = primaryStage;
-        banks = new Bank[NUMBER_OF_BANKS];
+        banks = new Bank[4];
     }
 
     public void loadBanks() {
@@ -43,7 +42,7 @@ public class Launchpad {
 
         for (int row = 0; row < currentPlayableButtons.length; row++) {
             for(int col = 0; col < currentPlayableButtons[row].length; col++) {
-                output += currentPlayableButtons[row][col].toString() + "\n";
+                output += currentPlayableButtons[row][col].getFileName() + "\n";
             }
         }
 

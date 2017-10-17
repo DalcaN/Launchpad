@@ -1,4 +1,7 @@
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import java.io.File;
+import java.util.List;
 
 public class Bank {
     private Button[][] buttons;
@@ -6,25 +9,37 @@ public class Bank {
 
     public Bank(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        buttons = new Button[1][2];
+        buttons = new Button[4][4];
     }
 
     public Button[][] getButtons() {
         return buttons;
     }
 
-    public void loadButton(int row, int col) {
-        buttons[row][col] = new Button(primaryStage);
-        buttons[row][col].loadSample();
-    }
-
     public void loadButtons() {
-        for(int row = 0; row < buttons.length; row++) {
-            for(int col = 0; col < buttons[row].length; col++) {
-                buttons[row][col] = new Button(primaryStage);
-                buttons[row][col].loadSample();
+        List<File> filesSelected;
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.setTitle("Choose at least 16 samples!");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Audio Files", "*.wav"));
+
+        while(true) {
+            filesSelected = fileChooser.showOpenMultipleDialog(primaryStage);
+            if(filesSelected.size() >= 16) {
+                break;
+            }
+            System.out.println("Not enough files for the bank.  There must be at least 16 samples.");
+        }
+
+        int filesIndex = 0;
+
+        for(int i = 0; i < buttons.length; i++) {
+            for(int j = 0; j < buttons[i].length; j++) {
+                buttons[i][j] = new Button();
+                buttons[i][j].loadSample(filesSelected.get(filesIndex));
+                filesIndex++;
             }
         }
     }
-
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
@@ -12,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartController">
    <center>
-      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gridPane" alignment="CENTER" onKeyPressed="#keyboardMode" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,54 +28,66 @@
             <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="a00" mnemonicParsing="false" onMouseClicked="#keyPressedF1" prefHeight="30.0" prefWidth="140.0" text="Bank 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a00" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a01" mnemonicParsing="false" onMouseClicked="#keyPressedF2" prefHeight="30.0" prefWidth="140.0" text="Bank 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a01" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a02" mnemonicParsing="false" onMouseClicked="#keyPressedF3" prefHeight="30.0" prefWidth="140.0" text="Bank 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a02" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a03" mnemonicParsing="false" onMouseClicked="#keyPressedF4" prefHeight="30.0" prefWidth="140.0" text="Bank 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a03" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a10" mnemonicParsing="false" onMouseClicked="#keyPressed1" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a11" mnemonicParsing="false" onMouseClicked="#keyPressed2" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a12" mnemonicParsing="false" onMouseClicked="#keyPressed3" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a13" mnemonicParsing="false" onMouseClicked="#keyPressed4" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a20" mnemonicParsing="false" onMouseClicked="#keyPressedQ" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a21" mnemonicParsing="false" onMouseClicked="#keyPressedW" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a22" mnemonicParsing="false" onMouseClicked="#keyPressedE" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a23" mnemonicParsing="false" onMouseClicked="#keyPressedR" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a30" mnemonicParsing="false" onMouseClicked="#keyPressedA" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a31" mnemonicParsing="false" onMouseClicked="#keyPressedS" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a32" mnemonicParsing="false" onMouseClicked="#keyPressedD" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a33" mnemonicParsing="false" onMouseClicked="#keyPressedF" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a40" mnemonicParsing="false" onMouseClicked="#keyPressedZ" prefHeight="144.0" prefWidth="144.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="a41" mnemonicParsing="false" onMouseClicked="#keyPressedX" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="a42" mnemonicParsing="false" onMouseClicked="#keyPressedC" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="a43" mnemonicParsing="false" onMouseClicked="#keyPressedV" prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a10" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a11" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a12" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a13" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a20" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a21" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a22" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a23" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a30" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a31" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a32" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a33" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a40" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a41" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a42" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a43" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </center>
    <top>
-      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <items>
-          <Button fx:id="ls" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#onMouseClicked" prefWidth="150.0" text="Load Soundpack" textAlignment="CENTER" translateX="275.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Button>
-        </items>
-      </ToolBar>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Load">
+            <items>
+              <MenuItem fx:id="newSoundpack" mnemonicParsing="false" onAction="#newSoundpack" text="New Soundpack" />
+                  <MenuItem mnemonicParsing="false" text="Most Recent Soundpack" />
+                  <MenuItem mnemonicParsing="false" text="Default Soundpack" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </top>
 </BorderPane>
