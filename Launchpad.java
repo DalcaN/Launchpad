@@ -63,8 +63,9 @@ public class Launchpad {
 
         for (int row = 0; row < currentPlayableButtons.length; row++) {
             for(int col = 0; col < currentPlayableButtons[row].length; col++) {
-                output += currentPlayableButtons[row][col].getFileName() + "\n";
+                output += currentPlayableButtons[row][col].getFileName() + "    ";
             }
+            output += "\n";
         }
 
         output += "\n";
