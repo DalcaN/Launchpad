@@ -1,5 +1,7 @@
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class Launchpad {
     private Stage primaryStage;
     private Button[][] currentPlayableButtons;
@@ -10,7 +12,7 @@ public class Launchpad {
         banks = new Bank[4];
     }
 
-    public void loadBanks() {
+    public void loadNewBanks() {
         for(int i = 0; i < banks.length; i++) {
 
             switch(i + 1) {
@@ -21,7 +23,26 @@ public class Launchpad {
             }
 
             banks[i] = new Bank(primaryStage);
-            banks[i].loadButtons();
+            banks[i].loadNewButtons();
+        }
+
+        selectBank(0);
+    }
+
+    public void loadDefaultBanks() {
+        File bankFolder1 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 1/");
+        File bankFolder2 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 2/");
+        File bankFolder3 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 3/");
+        File bankFolder4 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 4/");
+
+        for(int i = 0; i < banks.length; i++) {
+            banks[i] = new Bank(primaryStage);
+            switch (i + 1) {
+                case 1: banks[i].loadDefaultButtons(bankFolder1); break;
+                case 2: banks[i].loadDefaultButtons(bankFolder2); break;
+                case 3: banks[i].loadDefaultButtons(bankFolder3); break;
+                case 4: banks[i].loadDefaultButtons(bankFolder4); break;
+            }
         }
 
         selectBank(0);
@@ -29,7 +50,7 @@ public class Launchpad {
 
     public void selectBank(int index) {
         currentPlayableButtons = banks[index].getButtons();
-        System.out.println(this);
+        //System.out.println(this);
     }
 
     public Button[][] getCurrentPlayableButtons() {

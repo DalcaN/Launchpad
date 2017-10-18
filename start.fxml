@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.input.MouseEvent ?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="700.0" stylesheets="@LaunchpadButton.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartController">
    <center>
       <GridPane fx:id="gridPane" alignment="CENTER" onKeyPressed="#keyboardMode" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -21,70 +22,70 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="a00" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a00" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" text="BANK 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a01" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a01" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" text="BANK 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a02" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a02" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" text="BANK 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a03" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Bank 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="a03" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" text="BANK 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="a10" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a11" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a12" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a13" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="a20" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a21" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a22" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a23" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="a30" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a31" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a32" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a33" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="a40" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="a41" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="a42" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="a43" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a10" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a11" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a12" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a13" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="a20" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a21" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a22" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a23" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="a30" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a31" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a32" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a33" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="a40" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a41" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a42" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="a43" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="144.0" styleClass="record-sales" stylesheets="@LaunchpadButton.css" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </center>
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Load">
+          <Menu mnemonicParsing="false" text="Load Soundpack">
             <items>
-              <MenuItem fx:id="newSoundpack" mnemonicParsing="false" onAction="#newSoundpack" text="New Soundpack" />
-                  <MenuItem mnemonicParsing="false" text="Most Recent Soundpack" />
-                  <MenuItem mnemonicParsing="false" text="Default Soundpack" />
+              <MenuItem fx:id="newSoundpack" mnemonicParsing="false" onAction="#loadNewSoundpack" text="Load New Soundpack" />
+                  <MenuItem fx:id="lastSoundpack" mnemonicParsing="false" text="Load Last Soundpack" />
+                  <MenuItem fx:id="defaultSoundpack" mnemonicParsing="false" onAction="#loadDefaultSoundpack" text="Load Default Soundpack" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
+          <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <CheckMenuItem fx:id="viewSongNames" mnemonicParsing="false" onAction="#hideButtonText" text="View Song Names" />
+               </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="keyHelp" mnemonicParsing="false" text="Keybinds" />
             </items>
           </Menu>
         </menus>

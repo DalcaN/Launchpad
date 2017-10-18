@@ -16,7 +16,7 @@ public class Bank {
         return buttons;
     }
 
-    public void loadButtons() {
+    public void loadNewButtons() {
         List<File> filesSelected;
         FileChooser fileChooser = new FileChooser();
 
@@ -41,5 +41,19 @@ public class Bank {
                 filesIndex++;
             }
         }
+    }
+    public void loadDefaultButtons(File folder) {
+        File[] filesSelected = folder.listFiles();
+
+        int filesIndex = 0;
+
+        for(int i = 0; i < buttons.length; i++) {
+             for(int j = 0; j < buttons[i].length; j++) {
+                 buttons[i][j] = new Button();
+                 buttons[i][j].loadSample(filesSelected[filesIndex]);
+                 filesIndex++;
+             }
+        }
+
     }
 }

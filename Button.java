@@ -9,7 +9,7 @@ public class Button {
     public void loadSample(File file) {
         sample = new Sample(file);
         this.file = file;
-        System.out.println("Loaded: " + getFileName());
+        //System.out.println("Loaded: " + getFileName());
     }
 
     public void press() {
@@ -27,6 +27,9 @@ public class Button {
         output = output.substring(index + 1).replaceAll("%20", " ");
         if(output.lastIndexOf(".wav") != -1) {
             output = output.substring(0, output.indexOf(".wav"));
+        }
+        if(output.lastIndexOf(".WAV") != -1) {
+            output = output.substring(0, output.indexOf(".WAV"));
         }
         return output;
     }

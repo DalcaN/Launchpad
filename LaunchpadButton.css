@@ -1,0 +1,32 @@
+.root {
+    -fx-background-color: darkgray;
+    -fx-font-size: 12pt;
+}
+
+.button {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 6;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #2e8091 0%, #1e5561 100%),
+            /*#9d4024,*/
+            /*#d86e3a,*/
+            radial-gradient(center 50% 50%, radius 100%, #e7f4f7, #86cad8);
+    -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #174048;
+}
+.button:hover {
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #2e8091 0%, #1e5561 100%),
+            /*#9d4024,*/
+            /*#d86e3a,*/
+            radial-gradient(center 50% 50%, radius 100%, #e7f4f7, #3dabc1);
+}
+.button:pressed {
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #2e8091 0%, #1e5561 100%),
+                /*#9d4024,*/
+                /*#d86e3a,*/
+            radial-gradient(center 50% 50%, radius 100%, #e7f4f7, #3dabc1);
+}

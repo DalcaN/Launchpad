@@ -23,6 +23,7 @@ public class Start extends Application {
         loader.setLocation(Main.class.getResource("/start.fxml"));
         BorderPane mainLayout = loader.load();
         Scene scene = new Scene(mainLayout);
+        scene.getStylesheets().add("/LaunchpadButton.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
