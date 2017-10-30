@@ -6,6 +6,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class StartController extends Start{
     @FXML private Button a00;
@@ -38,8 +40,8 @@ public class StartController extends Start{
     @FXML private MenuItem lastSoundpack;
     @FXML private MenuItem defaultSoundpack;
     @FXML private CheckMenuItem hideSongNames;
+    @FXML private CheckMenuItem hideBankNames;
     @FXML private MenuItem keyHelp;
-
 
     @FXML public void keyboardMode (KeyEvent event) {
         switch (event.getCode()) {
@@ -48,48 +50,67 @@ public class StartController extends Start{
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
+                pressButton(a00);
                 break;
             case F2:
                 launchpad.selectBank(1);
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
+                pressButton(a01);
                 break;
             case F3:
                 launchpad.selectBank(2);
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
+                pressButton(a02);
                 break;
             case F4:
                 launchpad.selectBank(3);
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
+                pressButton(a03);
                 break;
 
+            case DIGIT1:
+                launchpad.getCurrentPlayableButtons()[0][0].press(); pressButton(a10); break;
+            case DIGIT2:
+                launchpad.getCurrentPlayableButtons()[0][1].press(); pressButton(a11); break;
+            case DIGIT3:
+                launchpad.getCurrentPlayableButtons()[0][2].press(); pressButton(a12); break;
+            case DIGIT4:
+                launchpad.getCurrentPlayableButtons()[0][3].press(); pressButton(a13); break;
 
-            case DIGIT1: launchpad.getCurrentPlayableButtons()[0][0].press(); break;
-            case DIGIT2: launchpad.getCurrentPlayableButtons()[0][1].press(); break;
-            case DIGIT3: launchpad.getCurrentPlayableButtons()[0][2].press(); break;
-            case DIGIT4: launchpad.getCurrentPlayableButtons()[0][3].press(); break;
+            case Q:
+                launchpad.getCurrentPlayableButtons()[1][0].press(); pressButton(a20); break;
+            case W:
+                launchpad.getCurrentPlayableButtons()[1][1].press(); pressButton(a21); break;
+            case E:
+                launchpad.getCurrentPlayableButtons()[1][2].press(); pressButton(a22); break;
+            case R:
+                launchpad.getCurrentPlayableButtons()[1][3].press(); pressButton(a23); break;
 
-            case Q: launchpad.getCurrentPlayableButtons()[1][0].press(); break;
-            case W: launchpad.getCurrentPlayableButtons()[1][1].press(); break;
-            case E: launchpad.getCurrentPlayableButtons()[1][2].press(); break;
-            case R: launchpad.getCurrentPlayableButtons()[1][3].press(); break;
+            case A:
+                launchpad.getCurrentPlayableButtons()[2][0].press(); pressButton(a30); break;
+            case S:
+                launchpad.getCurrentPlayableButtons()[2][1].press(); pressButton(a31); break;
+            case D:
+                launchpad.getCurrentPlayableButtons()[2][2].press(); pressButton(a32); break;
+            case F:
+                launchpad.getCurrentPlayableButtons()[2][3].press(); pressButton(a33); break;
 
-            case A: launchpad.getCurrentPlayableButtons()[2][0].press(); break;
-            case S: launchpad.getCurrentPlayableButtons()[2][1].press(); break;
-            case D: launchpad.getCurrentPlayableButtons()[2][2].press(); break;
-            case F: launchpad.getCurrentPlayableButtons()[2][3].press(); break;
+            case Z:
+                launchpad.getCurrentPlayableButtons()[3][0].press(); pressButton(a40); break;
+            case X:
+                launchpad.getCurrentPlayableButtons()[3][1].press(); pressButton(a41); break;
+            case C:
+                launchpad.getCurrentPlayableButtons()[3][2].press(); pressButton(a42); break;
+            case V:
+                launchpad.getCurrentPlayableButtons()[3][3].press(); pressButton(a43); break;
 
-            case Z: launchpad.getCurrentPlayableButtons()[3][0].press(); break;
-            case X: launchpad.getCurrentPlayableButtons()[3][1].press(); break;
-            case C: launchpad.getCurrentPlayableButtons()[3][2].press(); break;
-            case V: launchpad.getCurrentPlayableButtons()[3][3].press(); break;
-
-            case H:
+            case MINUS:
                 if(hideSongNames.isSelected()) {
                     refreshButtonText();
                     hideSongNames.setSelected(false);
@@ -98,21 +119,57 @@ public class StartController extends Start{
                     hideSongNames.setSelected(true);
                 }
                 break;
+
+            case EQUALS:
+                if(hideBankNames.isSelected()) {
+                    refreshBankText();
+                    hideBankNames.setSelected(false);
+                } else {
+                    hideBankText();
+                    hideBankNames.setSelected(true);
+                }
+                break;
         }
+    }
+    private void pressButton (Button btn) {
+        btn.getStyleClass().remove("armed");
+        btn.getStyleClass().remove("disarmed");
+        btn.getStyleClass().add("armed");
+        btn.arm();
+
+        Timer timer = new Timer();
+        TimerTask resetButtonColor = new TimerTask() {
+            @Override
+            public void run() {
+                btn.getStyleClass().remove("armed");
+                btn.getStyleClass().remove("disarmed");
+                btn.getStyleClass().add("disarmed");
+                btn.arm();
+            }
+        };
+
+        timer.schedule(resetButtonColor, 200);
     }
 
     @FXML public void loadNewSoundpack (ActionEvent event) {
         launchpad = new Launchpad(primaryStage);
         launchpad.loadNewBanks();
-        refreshButtonText();
-        hideSongNames.setSelected(false);
-    }
 
+        refreshButtonText();
+        refreshBankText();
+
+        hideSongNames.setSelected(false);
+        hideBankNames.setSelected(false);
+    }
     @FXML public void loadDefaultSoundpack (ActionEvent event) {
         launchpad = new Launchpad(primaryStage);
         launchpad.loadDefaultBanks();
+
         refreshButtonText();
+        refreshBankText();
+
         hideSongNames.setSelected(false);
+        hideBankNames.setSelected(false);
     }
 
     @FXML public void hideSongNames(ActionEvent event) {
@@ -122,7 +179,6 @@ public class StartController extends Start{
             refreshButtonText();
         }
     }
-
     private void hideButtonText () {
         a10.setText("");
         a11.setText("");
@@ -144,7 +200,6 @@ public class StartController extends Start{
         a42.setText("");
         a43.setText("");
     }
-
     private void refreshButtonText () {
         a10.setText(launchpad.getCurrentPlayableButtons()[0][0].getFileName());
         a11.setText(launchpad.getCurrentPlayableButtons()[0][1].getFileName());
@@ -165,5 +220,25 @@ public class StartController extends Start{
         a41.setText(launchpad.getCurrentPlayableButtons()[3][1].getFileName());
         a42.setText(launchpad.getCurrentPlayableButtons()[3][2].getFileName());
         a43.setText(launchpad.getCurrentPlayableButtons()[3][3].getFileName());
+    }
+
+    @FXML public void hideBankNames(ActionEvent event) {
+        if(hideBankNames.isSelected()) {
+            hideBankText();
+        } else {
+            refreshBankText();
+        }
+    }
+    private void hideBankText() {
+        a00.setText("");
+        a01.setText("");
+        a02.setText("");
+        a03.setText("");
+    }
+    private void refreshBankText() {
+        a00.setText("BANK 1");
+        a01.setText("BANK 2");
+        a02.setText("BANK 3");
+        a03.setText("BANK 4");
     }
 }

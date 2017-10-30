@@ -81,6 +81,7 @@
           <Menu mnemonicParsing="false" text="View">
                <items>
                   <CheckMenuItem fx:id="hideSongNames" mnemonicParsing="false" onAction="#hideSongNames" text="Hide Song Names" />
+                  <CheckMenuItem fx:id="hideBankNames" mnemonicParsing="false" onAction="#hideBankNames" text="Hide Bank Names" />
                </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
