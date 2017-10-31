@@ -50,28 +50,28 @@ public class StartController extends Start{
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
-                pressButton(a00);
+                bankSelector(1);
                 break;
             case F2:
                 launchpad.selectBank(1);
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
-                pressButton(a01);
+                bankSelector(2);
                 break;
             case F3:
                 launchpad.selectBank(2);
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
-                pressButton(a02);
+                bankSelector(3);
                 break;
             case F4:
                 launchpad.selectBank(3);
                 if(!hideSongNames.isSelected()) {
                     refreshButtonText();
                 }
-                pressButton(a03);
+                bankSelector(4);
                 break;
 
             case DIGIT1:
@@ -136,7 +136,6 @@ public class StartController extends Start{
         btn.getStyleClass().remove("disarmed");
         btn.getStyleClass().add("armed");
         btn.arm();
-
         Timer timer = new Timer();
         TimerTask resetButtonColor = new TimerTask() {
             @Override
@@ -149,6 +148,82 @@ public class StartController extends Start{
         };
 
         timer.schedule(resetButtonColor, 200);
+    }
+    private void toggleButton (Button btn) {
+        if(btn.isArmed()) {
+            btn.getStyleClass().remove("armed");
+            btn.getStyleClass().remove("disarmed");
+            btn.getStyleClass().add("disarmed");
+            btn.disarm();
+        } else {
+            btn.getStyleClass().remove("armed");
+            btn.getStyleClass().remove("disarmed");
+            btn.getStyleClass().add("armed");
+            btn.arm();
+        }
+    }
+    private void bankSelector (int i) {
+        switch (i) {
+            case 1:
+                if ( !a00.isArmed() ) {
+                    toggleButton(a00);
+                }
+                if ( a01.isArmed() ) {
+                    toggleButton(a01);
+                }
+                if ( a02.isArmed() ) {
+                    toggleButton(a02);
+                }
+                if ( a03.isArmed() ) {
+                    toggleButton(a03);
+                }
+                break;
+
+            case 2:
+                if ( a00.isArmed() ) {
+                    toggleButton(a00);
+                }
+                if ( !a01.isArmed() ) {
+                    toggleButton(a01);
+                }
+                if ( a02.isArmed() ) {
+                    toggleButton(a02);
+                }
+                if ( a03.isArmed() ) {
+                    toggleButton(a03);
+                }
+                break;
+
+            case 3:
+                if ( a00.isArmed() ) {
+                    toggleButton(a00);
+                }
+                if ( a01.isArmed() ) {
+                    toggleButton(a01);
+                }
+                if ( !a02.isArmed() ) {
+                    toggleButton(a02);
+                }
+                if ( a03.isArmed() ) {
+                    toggleButton(a03);
+                }
+                break;
+
+            case 4:
+                if ( a00.isArmed() ) {
+                    toggleButton(a00);
+                }
+                if ( a01.isArmed() ) {
+                    toggleButton(a01);
+                }
+                if ( a02.isArmed() ) {
+                    toggleButton(a02);
+                }
+                if ( !a03.isArmed() ) {
+                    toggleButton(a03);
+                }
+                break;
+        }
     }
 
     @FXML public void loadNewSoundpack (ActionEvent event) {
