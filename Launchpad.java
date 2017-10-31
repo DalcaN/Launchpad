@@ -1,18 +1,18 @@
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class Launchpad {
     private Stage primaryStage;
-    private Button[] currentPlayableButtons;
+    private Button[][] currentPlayableButtons;
     private Bank[] banks;
 
     public Launchpad(Stage primaryStage) {
-        final int NUMBER_OF_BANKS = 2;
-
         this.primaryStage = primaryStage;
-        banks = new Bank[NUMBER_OF_BANKS];
+        banks = new Bank[4];
     }
 
-    public void loadBanks() {
+    public void loadNewBanks() {
         for(int i = 0; i < banks.length; i++) {
 
             switch(i + 1) {
@@ -23,29 +23,49 @@ public class Launchpad {
             }
 
             banks[i] = new Bank(primaryStage);
-            banks[i].loadButtons();
+            banks[i].loadNewButtons();
         }
+
+        selectBank(0);
+    }
+
+    public void loadDefaultBanks() {
+        File bankFolder1 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 1/");
+        File bankFolder2 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 2/");
+        File bankFolder3 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 3/");
+        File bankFolder4 = new File("/Users/Dan/Desktop/Launchpad/Soundpack/Bank 4/");
+
+        for(int i = 0; i < banks.length; i++) {
+            banks[i] = new Bank(primaryStage);
+            switch (i + 1) {
+                case 1: banks[i].loadDefaultButtons(bankFolder1); break;
+                case 2: banks[i].loadDefaultButtons(bankFolder2); break;
+                case 3: banks[i].loadDefaultButtons(bankFolder3); break;
+                case 4: banks[i].loadDefaultButtons(bankFolder4); break;
+            }
+        }
+
+        selectBank(0);
     }
 
     public void selectBank(int index) {
         currentPlayableButtons = banks[index].getButtons();
-        System.out.println(this);
+        //System.out.println(this);
     }
 
-    public void pressButton(int index) {
-        currentPlayableButtons[index].press();
-    }
-
-    public Bank[] getBanks() {
-        return banks;
+    public Button[][] getCurrentPlayableButtons() {
+        return currentPlayableButtons;
     }
 
     @Override
     public String toString() {
         String output = "\nCurrent Playable Buttons are:\n";
 
-        for (int i = 0; i < currentPlayableButtons.length; i++) {
-            output += currentPlayableButtons[i].toString() + "\n";
+        for (int row = 0; row < currentPlayableButtons.length; row++) {
+            for(int col = 0; col < currentPlayableButtons[row].length; col++) {
+                output += currentPlayableButtons[row][col].getFileName() + "    ";
+            }
+            output += "\n";
         }
 
         output += "\n";

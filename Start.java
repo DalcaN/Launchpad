@@ -1,34 +1,35 @@
 import javafx.application.Application;
-import javafx.stage.FileChooser;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import sun.applet.Main;
+
+import java.io.IOException;
 
 public class Start extends Application {
-
-    public static void main(String[] args) {
-        launch(args);
-    }
+    protected Launchpad launchpad;
+    protected Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Launchpad");
+        showMainView();
+    }
 
-        Launchpad launchpad = new Launchpad(primaryStage);
-        launchpad.loadBanks();
-        launchpad.selectBank(0);
-        launchpad.pressButton(0);   //play 1st
-        launchpad.selectBank(1);
-        launchpad.pressButton(1);    //play 4th
-        launchpad.selectBank(1);
-        launchpad.pressButton(0);    //play 3rd
-        launchpad.getBanks()[0].loadButton(0);
-        launchpad.selectBank(0);
-        launchpad.pressButton(1);    //play 2nd
-        launchpad.selectBank(0);
-        launchpad.pressButton(0);   //play changed 1st
+    public void showMainView() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("/start.fxml"));
+        BorderPane mainLayout = loader.load();
+        Scene scene = new Scene(mainLayout);
+        scene.getStylesheets().add("/LaunchpadButton.css");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-        System.exit(0);
+    public static void main(String[] args) {
+        launch(args);
     }
 
 }

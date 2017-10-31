@@ -1,30 +1,36 @@
 import javafx.stage.Stage;
+import java.io.File;
+import java.util.List;
 
 public class Button {
     private Sample sample;
-    private Stage primaryStage;
+    private File file;
 
-    public Button(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-    }
-
-    public void loadSample() {
-        sample = new Sample(primaryStage);
-        System.out.println("Loaded: " + this);
+    public void loadSample(File file) {
+        sample = new Sample(file);
+        this.file = file;
+        //System.out.println("Loaded: " + getFileName());
     }
 
     public void press() {
-        System.out.println("Playing: " + this);
         sample.play();
-        System.out.println("Ending: " + this);
-        sample.stop();
     }
 
-    @Override
-    public String toString() {
-        String output = sample.getSource().toURI().toString();
-        output = output.substring(6).replaceAll("%20", " ");
+    public String getFilePath() {
+        String output = file.toURI().toString();
+        return output;
+    }
 
+    public String getFileName() {
+        String output = file.toURI().toString();
+        int index = output.lastIndexOf('/');
+        output = output.substring(index + 1).replaceAll("%20", " ");
+        if(output.lastIndexOf(".wav") != -1) {
+            output = output.substring(0, output.indexOf(".wav"));
+        }
+        if(output.lastIndexOf(".WAV") != -1) {
+            output = output.substring(0, output.indexOf(".WAV"));
+        }
         return output;
     }
 }
